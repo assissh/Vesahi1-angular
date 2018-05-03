@@ -1,0 +1,40 @@
+<!--<div style="text-align:center;">-->
+<!--<h2>Login</h2>-->
+<!--<form #frm="ngForm" (ngSubmit)="add(frm.value)">-->
+  <!--Name:<br>-->
+  <!--<input  type="text" name="Username" value="test1" ngModel>-->
+  <!--<br>-->
+  <!--Description:<br>-->
+  <!--<input type="text" name="Password" value="test2" ngModel>-->
+  <!--<br><br>-->
+  <!--&lt;!&ndash;<input type="submit" value="Submit">&ndash;&gt;-->
+  <!--<button type="submit"   class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+
+<!--</div>-->
+
+         <h1 align="center">Login</h1>
+
+<div align="center">
+<form (ngSubmit)="add()" [formGroup]="login_Form">
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Username" formControlName="Username">
+      <mat-error *ngIf="login_Form.get('Username').hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password"  type="password" formControlName="Password">
+      <mat-error *ngIf="login_Form.get('Password').hasError('required')">
+        Member Description <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-ripple mat-raised-button type="submit" color="primary">Login</button>
+</form>
+</div>

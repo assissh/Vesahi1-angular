@@ -1,0 +1,27 @@
+
+
+<div class ="container"  style="text-align:center;"  >
+   <h1>Our Developing Team Members</h1>
+
+  <ul class="members">
+<ul *ngFor="let team_member of production_team_members" (click)="memberclicked(team_member)" class="teamclickable">
+  <span class="badge">{{team_member.Name}}</span>
+
+  </ul>
+  </ul>
+
+</div>
+
+<div class="container" style="text-align:right;" >
+
+  <h1>Details:</h1>
+  <div *ngIf="selected_member">
+    <h4>{{selected_member.id}}</h4>
+    <h4>Name: {{selected_member.Name}}</h4>
+    <h4>Description: {{selected_member.Description}}</h4>
+
+</div>
+</div>
+
+
+ <button mat-ripple mat-raised-button type="submit" [routerLink]="['/Production_Team']" color="primary">Create New Member</button>

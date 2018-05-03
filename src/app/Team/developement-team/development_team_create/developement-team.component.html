@@ -1,0 +1,28 @@
+
+          <h1 align="center">Create Your Development Team Member Here</h1>
+
+<div align="center">
+<form (ngSubmit)="add()" [formGroup]="development_teamForm">
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Name" formControlName="Name">
+      <mat-error *ngIf="development_teamForm.get('Name').hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Description" formControlName="Description">
+      <mat-error *ngIf="development_teamForm.get('Description').hasError('required')">
+        Member Description <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-ripple mat-raised-button type="submit" color="primary">Sibmit</button>
+</form>
+</div>
+
+          <button mat-ripple mat-raised-button type="submit" [routerLink]="['/Development_Team_list']" color="primary">Developement Team List</button>
